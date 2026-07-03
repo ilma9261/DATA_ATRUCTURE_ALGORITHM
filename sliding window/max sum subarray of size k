@@ -12,7 +12,7 @@ class Solution{
              sum+=Arr[i];
         }
         int ans=sum;
-        while(high<n-1){
+        while(high<n-1){          // If you are doing high++ inside the loop, then the condition should usually be this otherwise it <= will go out of bound
             low++;
             high++;
             sum=sum-Arr[low-1]+Arr[high];
