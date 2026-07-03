@@ -10,7 +10,7 @@ public:
         int ans = a[0];
 
         for(int i = 1; i < n; i++) {
-            oneDeletion = max(noDeletion, oneDeletion + a[i]);
+            oneDeletion = max(noDeletion, oneDeletion + a[i]);        // you deleted one element, but you still keep adding the elements after it
             noDeletion = max(a[i], noDeletion + a[i]);
             ans = max(ans, max(noDeletion, oneDeletion));
         }
