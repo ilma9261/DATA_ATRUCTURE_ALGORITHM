@@ -15,7 +15,7 @@ public:
             if(left==right){
                 return i;
             }
-            left+=a[i];
+            left+=a[i];     // we can also use else condition here but its choise
         }
         return-1;
     }
