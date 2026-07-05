@@ -1,19 +1,37 @@
 //gfg
 //Case 1: Empty vector + push_back() (Correct)
-//Case 2: Empty vector + indexing (Wrong)
+//Case 2: Empty vector + indexing (Wrong
 
+
+If you write:
+
+arr[i]
+
+➡️ i = array index
+
+If you write:
+
+mp[i]
+
+➡️ i = map key (number)
 
 class Solution {
-  public:
-    // Function to count the frequency of all elements from 1 to N in the array.
+public:
     vector<int> frequencyCount(vector<int>& arr) {
-        // code here
-        int n=arr.size();
-        vector <int> freq(n,0);       // Create vector of size n initialized with 0
-        for(int i=0;i<n;i++){
-            int key= arr[i];
-            freq[key-1]++;
+
+        int n = arr.size();
+        unordered_map<int, int> mp;
+
+        for (int i = 0; i < n; i++) {
+            mp[arr[i]]++;
         }
-        return freq;
+
+        vector<int> v;
+
+        for (int i = 1; i <= n; i++) {
+            v.push_back(mp[i]);
+        }
+
+        return v;
     }
 };
