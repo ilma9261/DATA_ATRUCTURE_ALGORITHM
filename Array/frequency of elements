@@ -1,6 +1,8 @@
 // gfg
 //two approaches
 
+// bruteforce
+
 class Solution {
   public:
     vector<vector<int>> countFreq(vector<int>& arr) {
