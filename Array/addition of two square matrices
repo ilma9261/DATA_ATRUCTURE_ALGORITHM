@@ -7,8 +7,8 @@ class Solution {
         
         int n=matrixA.size();       //rows
         int m=matrixA[0].size();     //column
-        for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++){
+        for(int i=0;i<n;i++){          // loop goes through each row
+            for(int j=0;j<m;j++){      // loop goes through each colomn
                 matrixA[i][j]=matrixA[i][j]+matrixB[i][j];
             }
         }
