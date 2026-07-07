@@ -1,5 +1,9 @@
 //gfg
 //hashmap
+//we have two approaches to solve it
+
+
+// 1
 
 class Solution {
   public:
@@ -11,6 +15,29 @@ class Solution {
             if(mp.find(s[i])==mp.end()){             //if(mp[s[i]]==0)
                 res+=s[i];
                 mp[s[i]]++;
+            }
+        }
+        return res;
+    }
+};
+
+
+// 2
+
+class Solution {
+  public:
+    string removeDuplicates(string &s) {
+        // code here
+        int n=s.size();
+        string res="";
+        unordered_map<char,int> mp;
+        for(int i=0;i<n;i++){
+            mp[s[i]]++;
+        }
+        for(int i=0;i<n;i++){
+            if(mp.find(s[i])!=mp.end()){
+                res+=s[i];
+               mp.erase(s[i]);            // there should be always a key inside erase function
             }
         }
         return res;
