@@ -1,0 +1,16 @@
+//gfg
+
+class Solution {
+  public:
+    string removeSpaces(string& s) {
+        // code here
+        int n=s.size();
+        string res="";
+        for(int i=0;i<n;i++){
+            if(s[i]!=' '){            // if(s[i]>=a && s[i]<=z)   cant use || operator here cz empty string space would always be less than z so the condition will be always true.
+            res+=s[i];
+            }
+        }
+        return res;
+    }
+};
