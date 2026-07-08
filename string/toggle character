@@ -1,0 +1,21 @@
+// gfg
+
+class Solution {
+  public:
+    string toggleCase(string &s) {
+        // code here
+        int n=s.size();
+        string res="";
+        for(int i=0;i<n;i++){
+            if(islower(s[i])){
+              res+=  toupper(s[i]);          //Instead of:  toupper(s[i]) res += s[i];   
+                  }
+                                             // think:    res += toupper(s[i]);     cz it does not modify the original character s[i] would be still same
+            else {
+              res+=  tolower(s[i]);
+              
+            }
+        }
+        return res;
+    }
+};
