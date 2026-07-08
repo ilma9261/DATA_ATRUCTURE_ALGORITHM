@@ -1,0 +1,41 @@
+// gfg
+// map approach is not suitable for this problem because a map stores the total frequency of each character, while the problem needs the frequency of consecutive characters.
+
+class Solution {
+  public:
+    string encryptString(string s) {
+        // code here
+        int n=s.size();
+        string res="";
+       int count=1;
+       for(int i=1;i<n;i++){
+           if(s[i]==s[i-1]){
+               count++;
+           }
+           else {
+               res+=s[i-1];
+               res+=to_string(count);
+               count=1;
+           }
+       }
+       
+       // The else runs only when the character changes
+       // we need to process the last element
+       
+       res+=s[n-1];
+       res+=to_string(count);
+       
+       // we can directly use reverse built-in functions here 
+       // reverse(res.begin(), res.end());
+       // syntax of reverse function is just like sort function
+       
+       int i=0;
+        int j=res.size()-1;
+        while(i<j){
+            swap(res[i],res[j]);
+            i++;
+            j--;
+        }
+        return res;
+    }
+};
