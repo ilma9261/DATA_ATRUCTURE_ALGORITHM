@@ -1,0 +1,16 @@
+// gfg
+
+class Solution {
+  public:
+    int countWords(string &s) {
+        // code here
+        int n=s.size();
+        int count=0;
+        for(int i=0;i<n;i++){
+            if(!isspace(s[i]) && (i==0 || isspace(s[i-1]))){           // isspace() works for ' ' space, tab /t and new line /n
+                count++;
+            }
+        }
+        return count;
+    }
+};
