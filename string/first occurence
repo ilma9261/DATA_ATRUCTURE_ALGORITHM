@@ -8,7 +8,7 @@ class Solution {
         for(int i=0;i<txt.size();i++){
             for( j=0;j<pat.size();j++){
                 if(txt[i+j]!=pat[j]){
-                    break;
+                    break;                      // Whenever you use break inside a loop, the success check (j == pat.size()) is almost always done after the loop finishes not inside it.
                 }
             }
             if(j==pat.size()){
