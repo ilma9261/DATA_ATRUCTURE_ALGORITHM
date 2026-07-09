@@ -1,6 +1,5 @@
 //gfg
 
-
 // Check the last group
 // Whenever you process something when it changes, the last group is left unprocessed because it never changes again.
 // So after the loop, always ask: "Is there one last group still waiting to be processed?"
