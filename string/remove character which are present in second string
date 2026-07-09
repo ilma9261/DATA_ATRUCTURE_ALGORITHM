@@ -1,6 +1,6 @@
 //gfg
 //using hashmap 
-// map stores keys in sorted order but unordered_mapdoes stores keys in random order
+// map stores keys in sorted order but unordered_map stores keys in random order
 
 class Solution {
   public:
