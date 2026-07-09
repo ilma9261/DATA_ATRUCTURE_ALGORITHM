@@ -1,4 +1,33 @@
 //gfg
+// two methods
+
+//without map
+
+class Solution {
+public:
+    int getCount(string s, int k) {
+        int count = 1;
+        int res = 0;
+        for (int i = 1; i < s.size(); i++) {
+            if (s[i] == s[i - 1]) {
+                count++;
+            } else {
+                if (count == k)
+                    res++;
+                count = 1;
+            }
+        }
+        // Check the last group
+// Whenever you process something when it changes, the last group is left unprocessed because it never changes again.
+// So after the loop, always ask: "Is there one last group still waiting to be processed?"
+        if (count == k)
+            res++;
+        return res;
+    }
+};
+
+
+// with map
 
 class Solution {
   public:
