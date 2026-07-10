@@ -1,0 +1,23 @@
+//gfg
+
+class Solution {
+  public:
+    bool isSubSeq(string& s1, string& s2) {
+        // code here
+        int i=0;
+        int j=0;
+        while(i<s2.size() && j<s1.size()){
+            if(s2[i]==s1[j]){
+                i++;
+                j++;
+            }
+            else{
+                i++;
+            }
+            if(j==s1.size()){
+                return true;
+            }
+        }
+        return false;
+    }
+};
