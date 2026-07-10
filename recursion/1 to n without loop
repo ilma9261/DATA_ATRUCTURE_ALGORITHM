@@ -5,7 +5,7 @@ class Solution {
     void printTillN(int n) {
         // code here
         if(n==0){
-        return;
+        return;                              // function type is void so we didnt write 0 or anything after return keyword
         }
         else{                                // we dont need to use else statement cz code does not work after return 
             printTillN(n-1);
