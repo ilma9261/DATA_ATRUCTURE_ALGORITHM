@@ -1,4 +1,5 @@
 //gfg
+// we used two pointer and not map cz two pointer helps in order handling 
 
 class Solution {
   public:
