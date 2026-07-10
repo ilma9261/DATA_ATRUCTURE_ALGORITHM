@@ -1,0 +1,18 @@
+//gfg
+
+class Solution {
+  public:
+    bool commonSubseq(string &s1, string &s2) {
+        // code here
+        unordered_map<char,int> mp;
+        for(int i=0;i<s1.size();i++){
+            mp[s1[i]]++;
+        }
+        for(int i=0;i<s2.size();i++){
+            if(mp.find(s2[i])!=mp.end()){
+                return true;
+            }
+        }
+        return false;
+    }
+};
