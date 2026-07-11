@@ -8,9 +8,9 @@ class Solution {
         int ans=0;
         int num=n;
         while(n!=0){
-            int digit=n%10;
+            int digit=n%10;                              // get last digit               // n%3=gives ramainder  // 10/3=3
             ans=ans+digit*digit*digit;
-            n=n/10;
+            n=n/10;                                      // remove last digit 
         }
         if(ans==num){
             return true;
