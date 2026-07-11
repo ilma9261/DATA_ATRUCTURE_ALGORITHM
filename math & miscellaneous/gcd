@@ -17,7 +17,7 @@ public:
 
 //gcd of number
 //gfg
-//dry run 12,18
+//dry run 12,18 or 48,18
 //euclid algo
 
 class Solution {
