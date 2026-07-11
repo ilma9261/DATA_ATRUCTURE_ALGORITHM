@@ -12,10 +12,10 @@ public:
                 return mid;
             }
             if(target<nums[mid]){
-               high= mid-1;
+               high= mid-1;                        // to see in left
             }
             if(target>nums[mid]){
-               low= mid+1;
+               low= mid+1;                         // to see in right
             }
         }
         return -1;
