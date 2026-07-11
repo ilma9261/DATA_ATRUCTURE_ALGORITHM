@@ -26,7 +26,7 @@ class Solution {
         // code here
         while(b!=0){
            int temp=b;
-            b=a%b;
+            b=a%b;                          // 48%18=12 and 12%18=12
             a=temp;
         }
         return a;
