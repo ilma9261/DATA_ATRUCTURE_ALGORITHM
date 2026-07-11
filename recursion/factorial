@@ -3,10 +3,10 @@
 class Solution {
   public:
     int factorial(int n) {
-        // code here
+        // code here                               // factorial of 0 is 1 and fibonacci of 0 is 0
         if(n==0){                                 // can write  if(n<=1) or if(n==0 || n==1) cz and program is for positive integers
             return 1;                             // can not write if(n==1) cz for 0 input , it will try to acces -1 which is out of bound 
-        }
+        }                                            
         else{
            return n*factorial(n-1);
         }
