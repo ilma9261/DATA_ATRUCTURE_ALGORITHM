@@ -1,4 +1,4 @@
-// two methods
+// two methods + one extra 
 
 // without recursion
 // leetcode 509
@@ -24,7 +24,27 @@ public:
 };
 
 
+
 // with recursion
+// gfg
+
+class Solution {
+  public:
+    int nthFibonacci(int n) {
+        // code here
+        if(n==0){
+            return 0;           // factorial of 0 is 1 but fibonaacci of 0 is 0
+        }
+        if(n==1){
+            return 1;
+        }
+        return nthFibonacci(n-1)+nthFibonacci(n-2);
+    }
+};
+
+
+
+// First n Fibonacci using Recursion
 // gfg
 
 class Solution {
