@@ -8,7 +8,7 @@ class Solution {
         if(n==0){                   // in this GFG ques , we do not need to count zero cz constraints are starting from one but i mention it for safe case
             return 1;
         }
-        while(n>0){
+        while(n>0){                 // we can also write while(n!=0)
             digit++;
             n=n/10;
         }
