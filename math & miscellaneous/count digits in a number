@@ -5,7 +5,7 @@ class Solution {
     int countDigits(int n) {
         // Code here
         int digit=0;\
-        if(n==0){
+        if(n==0){                   // in this GFG ques , we do not need to count zero cz constraints are starting from one but i mention it for safe case
             return 1;
         }
         while(n>0){
