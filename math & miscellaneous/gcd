@@ -10,8 +10,8 @@ public:
             return "";
         }
         else{
-            return str2.substr(0,gcd(n1,n2));     //we can write str1.substr too
-        }
+            return str2.substr(0,gcd(n1,n2));                  //we can write str1.substr too
+        }                                                      // The syntax of substr() is: string.substr(start_index, length);
     }
 };
 
