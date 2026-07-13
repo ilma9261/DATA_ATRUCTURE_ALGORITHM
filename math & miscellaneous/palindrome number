@@ -1,0 +1,21 @@
+// gfg
+
+class Solution {
+  public:
+    bool isPalindrome(int n) {
+        // code here
+        int rev=0;
+        int num=n;
+        while(n!=0){
+            int digit=n%10;
+            rev=rev*10+digit;
+            n=n/10;
+        }
+        if(rev==num){
+            return true;
+        }
+        return false;
+    }
+};
+
+
