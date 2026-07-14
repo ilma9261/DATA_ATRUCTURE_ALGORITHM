@@ -1,0 +1,22 @@
+// gfg
+
+class Solution {
+  public:
+    bool isPerfect(int n) {
+        // code here
+        int sum=1;
+        int num=n;
+        for(int i=2;i*i<=n;i++){                 we are startin loop from 2 cause we dont want to add the n in it otherwise it will give error
+            if(n%i==0){
+                sum+=i;
+                if(n/i!=i){
+                    sum+=n/i;
+                }
+            }
+        }
+        if(num==sum){
+            return true;
+        }
+        return false;
+    }
+};
