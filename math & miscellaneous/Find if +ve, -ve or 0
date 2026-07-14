@@ -1,0 +1,21 @@
+// gfg
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Take a as input
+         int n;                                                     //  In C++, you need to declare the variable before using it in the `cin` statement. 
+        cin>> n;
+    // find it is positive, negative or zero
+    if(n>0){                                               // pay attention to its posivie negative not even odd
+        cout<<"Positive";
+    }
+    else if(n==0){
+        cout<<"Zero";
+    }
+    else{
+        cout<<"Negative";
+    }
+    return 0;
+}
