@@ -1,0 +1,14 @@
+// gfg 
+
+class Solution {
+  public:
+    int sumOfAP(int n, int a, int d) {
+        // Code here.
+        int sum=0;
+        for(int i=0;i<n;i++){
+           int digit=i*d;                 // cant change d directly otherwise it will perform rest opration using that updated d
+            sum+=a+digit;
+        }
+        return sum;
+    }
+};
