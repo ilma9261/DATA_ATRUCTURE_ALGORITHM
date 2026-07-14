@@ -1,0 +1,20 @@
+// gfg
+/ two ways to solve but the easiest one will give TLE error
+
+class Solution {
+  public:
+    vector<int> getDivisors(int n) {
+        // code here
+        vector<int> v;
+        for(int i=1;i*i<=n;i++){
+            if(n%i==0){
+                v.push_back(i);
+                if(n/i!=i){
+                v.push_back(n/i);
+            }
+            }
+        }
+        sort(v.begin(),v.end());         // we are able to use sorting even for optimisation cause we are sorting only divisors and number of divisors is usually small
+        return v;
+    }
+};
