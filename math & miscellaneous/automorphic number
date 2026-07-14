@@ -1,0 +1,22 @@
+// gfg
+
+class Solution {
+  public:
+    string isAutomorphic(int n) {
+        // code here
+        int num=n;
+        int sqr=n*n;
+        while(n!=0){
+            int numdig=n%10;
+            int sqrdig=sqr%10;
+            if(numdig!=sqrdig){
+               return "Not Automorphic";  
+            }
+            else{
+                n=n/10;
+                sqr=sqr/10;
+            }
+        }
+               return "Automorphic";
+    }
+};
