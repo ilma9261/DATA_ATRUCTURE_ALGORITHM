@@ -1,0 +1,16 @@
+// gfg
+// this is greedy problem but i solved like this
+
+class Solution {
+  public:
+    string maxNumber(vector<int>& arr) {
+        // code here.
+        string ans="";
+        int n=arr.size();
+        sort(arr.begin(),arr.end());
+        for(int i=n-1;i>=0;i--){
+            ans+=to_string(arr[i]);
+        }
+        return ans;
+    }
+};
