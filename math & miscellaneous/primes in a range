@@ -1,0 +1,27 @@
+// gfg
+
+class Solution {
+  public:
+    vector<int> primeRange(int l, int r) {
+        // code here
+        vector<int> v;
+        while(l<=r){
+            if(l<2){
+                l++;
+                continue;
+            }
+            bool isPrime= true;
+        for(int i=2;i*i<=l;i++){             // it will give TLE error if we use i<=n/2
+            if(l%i==0){                     // Factors always appear in pairs. Checking up to the square root covers the smaller half of every possible pair, cutting out thousands of duplicate check.
+                isPrime=false;             // EXAMPLE- Take the number 16. Its middle point is 4 (since $4 \times 4 = 16$).All its other factor pairs consist of one number below 4 and one number above 4, like 2 and 8.If I check up to 4 and don't find a factor, I don't need to waste time checking numbers like 8, because its smaller partner (2) would have already caught it.
+                break;
+            }
+        }
+        if(isPrime==true){
+             v.push_back(l);
+        }
+        l++;
+        }
+        return v;
+    }
+};
