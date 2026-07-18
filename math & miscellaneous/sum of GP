@@ -1,0 +1,36 @@
+// gfg
+// two methods
+
+// 1 ( optimised )
+
+class Solution {
+  public:
+    int sumOfGP(int n, int a, int r) {
+        // code here
+        int sum =0;
+        int term=a;
+        for(int i=0;i<n;i++){
+            sum+=term;
+            term*=r;
+        }
+        return sum;
+    }
+};
+
+// 2
+
+#include <cmath> // Required to use the pow() function
+
+class Solution {
+  public:
+    int sumOfGP(int n, int a, int r) {
+        int sum = 0;
+        // Fixed the '<+n' typo to '< n'
+        for(int i = 0; i < n; i++){                  // we are counting from zero i=0 that why we cannot write i<=n for nth term but we can also do i=1 and i<=n     
+          int GP = a * pow(r, i);                   // Fixed 'r**i' to use the C++ pow() function
+            sum += GP;
+        }
+        
+        return sum;
+    }
+};
