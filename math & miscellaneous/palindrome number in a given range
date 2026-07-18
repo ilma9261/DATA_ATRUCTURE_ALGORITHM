@@ -1,0 +1,22 @@
+// gfg 
+
+class Solution {
+  public:
+    vector<int> printPalindromes(int m, int n) {
+        // code here
+        vector<int> v;
+for (int i = m; i <= n; i++) {
+    int temp = i; 
+    int rev = 0;
+    while (temp!= 0) {                 // do all the changes in temp otherwise i will destroy and loop will not work 
+        int digit = temp% 10;
+        rev = rev * 10 + digit;
+        temp = temp/ 10;
+    }
+    if (rev == i) {
+        v.push_back(i);
+    }
+}
+return v;
+    }
+};
