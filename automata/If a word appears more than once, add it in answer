@@ -1,0 +1,27 @@
+A company called Dictory is launching a new dictionary application for mobile users. Initially, the dictionary will not have any words. Instead, it will be a self-learning application 
+that learns according to a user's text. When a user types text, the application auto-detects the words that appear more than once. The application then stores these words in the 
+dictionary and uses them as suggestions in future typing sessions.
+Write an algorithm to identify which words will be stored in the dictionary.
+
+
+
+unordered_map<string,int> mp;
+   stringstream ss(sentence);
+   string word;
+   while(ss>>word)
+{
+    mp[word]++;
+}
+string ans="";
+ss.clear();                               // Reset the stream
+ss.str(sentence);                        // Put the sentence back into the stream
+while (ss >> word)                       // "Keep reading one word from ss as long as there are words left to read."
+{
+    if (mp[word] > 1)
+    {
+        ans +=word + " ";
+        mp[word] = 0;
+    }
+}
+
+return ans;
