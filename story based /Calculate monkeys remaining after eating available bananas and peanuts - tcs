@@ -1,0 +1,67 @@
+There are total n number of Monkeys sitting on the branches of a huge Tree. As travelers offer Bananas and Peanuts, the Monkeys jump down the Tree. If every Monkey can eat k Bananas and 
+j Peanuts. If total m number of Bananas and p number of Peanuts are offered by travelers, calculate how many Monkeys remain on the Tree after some of them jumped down to eat.  
+At a time one Monkeys gets down and finishes eating and go to the other side of the road. The Monkey who climbed down does not climb up again after eating until the other Monkeys finish
+eating.  
+Monkey can either eat k Bananas or j Peanuts. If for last Monkey there are less than k Bananas left on the ground or less than j Peanuts left on the ground, only that Monkey can eat 
+Bananas(<k) along with the Peanuts(<j).  
+
+Write code to take inputs as n,m,p,k,j and return the number of Monkeys left on the Tree.  
+
+Input Variable Definitions:
+n = Total no of Monkeys  
+
+k = Number of eatable Bananas by Single Monkey (Monkey that jumped down last may get less than k Bananas)  
+
+j = Number of eatable Peanuts by single Monkey (Monkey that jumped down last may get less than j Peanuts)  
+
+m = Total number of Bananas  
+
+p = Total number of Peanuts  
+
+(Note: Remember that the Monkeys always eat Bananas and Peanuts, so there is no possibility of k and j having a value zero).
+
+
+
+
+this question has confusion whether to eat either or both
+
+minus approach
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n,k,j,p,m;
+    cin>>n>>k>>j>>p>>m;
+    int ans=0;
+for(int i=0;i<n;i++){
+    if(m>=k && p>=j){
+    m=m-k;
+    p=p-j;
+    ans++;
+    }
+}
+if(n>ans && (m!=0 || p!=0)){
+    ans++;
+}
+cout<<n-ans;
+    return 0;
+}
+
+
+
+
+divide approach 
+
+int banana_eat = m / k;
+int rem_banana = m % k;
+
+int peanut_eat = p / j;
+int rem_peanut = p % j;
+
+int left = n - (banana_eat + peanut_eat);
+
+if (rem_banana != 0 || rem_peanut != 0) {
+    left = left - 1;
+}
+
+cout << left;
