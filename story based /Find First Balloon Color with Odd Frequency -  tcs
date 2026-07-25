@@ -35,7 +35,7 @@ int main()
             break;                                       // break is mandatory otherwise This prints every character whose frequency is odd, including duplicates.
         }
     }
-if(found==false){
+if(found==false){                                       // if(!found)
     cout<<"all are even";
 }
     return 0;
