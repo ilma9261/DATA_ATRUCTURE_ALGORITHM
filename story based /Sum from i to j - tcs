@@ -1,8 +1,7 @@
 You are given two integers
-
 i and j.
-
 Your task is to calculate and print the sum of all integers from i to j, inclusive.
+but there is a condition like i and j should be in the range 1-9999 otherwise we have to print invalid input
 
 
 
@@ -13,6 +12,12 @@ int main()
 {
     int i,j;
     cin>>i>>j;
+
+if (i>j || i < 1 || i > 9999 || j < 1 || j > 9999) {
+        cout << "Invalid Input";
+        return 0;
+    }
+
     int sum=0;
     for(int k=i;k<=j;k++){
         sum+=k;
