@@ -1,0 +1,49 @@
+Alex created a modified version of the popular Wordle game.
+
+There is a hidden word S and a guessed word T, both of length 5.
+
+For each position i (0-based indexing):
+
+If S[i] == T[i], the corresponding character in the answer string M is 'G' (Green).
+
+Otherwise, the corresponding character in M is 'B' (Black).
+
+Given the hidden word S and the guessed word T, determine the string M.
+
+Input Format
+The first line contains a string S and the second line contains a string T.
+
+Both strings consist of uppercase English letters and have a length of 5.
+
+Output Format
+Print the string M representing the correctness of each guessed character.
+
+Sample Input
+
+ABCDE
+EDCBA
+
+Sample Output
+BBGBB
+
+
+
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n=5;
+    string S,T;
+    cin>>S>>T;
+    for(int i=0;i<n;i++){
+        if(S[i]!=T[i]){
+            cout<<'B';
+        }
+        else{
+             cout<<'G';
+        }
+    }
+    return 0;
+}
