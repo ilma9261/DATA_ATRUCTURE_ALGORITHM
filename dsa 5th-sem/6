@@ -1,0 +1,42 @@
+Alex wants to rent a car to travel to a destination that is N kilometers away. He has two options: 
+1) Rent a petrol car. 2) Rent a diesel car.
+
+The cost of one liter of petrol is X rupees, and the cost of one liter of diesel is Y rupees. The petrol car can travel A kilometers per
+liter, while the diesel car can travel B kilometers per liter. Fuel can be purchased in fractional quantities if required. Determine which
+type of car results in the lowest travel cost.
+
+Print "PETROL" if the petrol car is cheaper. Print "DIESEL" if the diesel car is cheaper. Print "ANY" if both options cost the same.
+
+Input Format
+A single line containing five space-separated integers : N X Y A B
+
+where: N = Distance to travel (in kilometers), X = Cost of one liter of petrol, Y = Cost of one liter of diesel, A = Mileage of petrol 
+car (km/l), B = Mileage of diesel car (km/l)
+
+Output Format
+Print one of the following: PETROL or DIESEL or ANY
+
+
+
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int N,X,Y,A,B;
+    cin>>N>>X>>Y>>A>>B;
+    int petrol=(N/A)*X;
+    int diesel=(N/B)*Y;
+    if(petrol<diesel){
+        cout<<"PETROL";
+    }
+    else if(petrol>diesel){
+        cout<<"DIESEL";
+    }
+    else{
+        cout<<"ANY";
+    }
+
+    return 0;
+}
