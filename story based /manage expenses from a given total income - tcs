@@ -1,0 +1,108 @@
+Write a program to manage expenses from a given total income.
+
+Input:
+
+Total Income: Integer value representing the total money.
+
+For each expense, take the following inputs repeatedly until the user enters "done":
+
+Category: String representing the type of expense (e.g., "food", "shopping").
+
+Expense: Integer value for the amount spent.
+
+Output:
+
+Print the Total Income.
+
+Print the Total Expenses (sum of all expenses).
+
+Print the Total Savings (Total Income - Total Expenses).
+
+Print the breakdown of expenses for each category.
+
+
+
+
+
+// i solved this question using map but that does not make sure that it store expenses in a order as user entered bcz map also stores
+in alphabetic order not user entered order so here are two solution
+
+VECTOR APPROACH
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int income;
+    cin>>income;
+    
+    string expense;
+    cin>>expense;
+    
+    int amount;
+    int sum=0;
+    unordered_map<string,int> mp;
+     vector<string> v;
+    while(expense!="done"){
+        cin>>amount;
+        if(mp.find(expense)==mp.end()){      // "The problem doesn't specify whether categories can repeat. I'll assume they can and store the total expense per category."
+            v.push_back(expense);            // maap already stores all values in one key so we have to specially check if we are using vector
+        }
+         mp[expense]+=amount;
+        sum+=amount;
+        cin>>expense;
+    }
+    
+    cout<<"Total Income: "<< income<<endl;
+    
+    cout<<"Total Expenses: " <<sum<<endl;
+    
+    int saving =income-sum;
+    cout<< "Total Savings: " <<saving<<endl;
+    
+    for(string x : v){
+     cout << x << ": " << mp[x] << endl;
+}
+    return 0;
+}
+
+
+
+
+
+MAP APPROACH
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int income;
+    cin>>income;
+    
+    string expense;
+    cin>>expense;
+    
+    int amount;
+    int sum=0;
+    unordered_map<string,int> mp;
+    while(expense!="done"){
+        cin>>amount;
+         mp[expense]+=amount;
+        sum+=amount;
+        cin>>expense;
+    }
+    
+    cout<< income<<endl;
+    
+    cout<<sum<<endl;
+    
+    int saving =income-sum;
+    cout<<saving<<endl;
+    
+    for(auto x : mp){
+    cout << x.first << ": " << x.second << endl;
+}
+    return 0;
+}
