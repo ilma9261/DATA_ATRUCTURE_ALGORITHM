@@ -1,0 +1,31 @@
+Alex has two integers $X$ and $Y$.He wants to make the two integers equal using the following operations:Increase X by 1.Increase Y
+  by 2.Each operation can be performed any number of times.Determine the minimum number of operations required to make $X$ and $Y$ equal.
+  Input FormatA single line containing two space-separated integers: $X\ Y$.Output FormatPrint the minimum number of operations required to
+    make the two integers equal.
+
+    
+
+    #include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int X,Y;
+    cin>>X>>Y;
+    if(X==Y){
+        cout<<0;
+    }
+    if(X<Y){
+        cout<<Y-X;
+    }
+    if(X>Y){
+        int diff=(X-Y)/2;
+        if(diff%2==0){
+             cout<<diff;
+        }
+        else{
+            cout<<diff+2;
+        }
+    }
+    return 0;
+}
