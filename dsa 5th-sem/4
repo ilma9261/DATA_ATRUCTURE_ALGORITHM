@@ -1,0 +1,23 @@
+In a fictional world, the speed of light is c meters per second and the acceleration due to gravity is g meters per second squared.A 
+person jumps from rest from a height H meters. During the fall, the relationship between the velocity v and the height descended is:
+v^2 = 2 \times g \times H Find the minimum height (in meters) required for the person to reach the speed of light.
+Input FormatA single line containing two space-separated integers: g cwhere: g is the acceleration due to gravity and c is the speed of light.
+Output FormatPrint a single integer representing the minimum height required.
+
+
+
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int g, c;
+    cin >> g >> c;
+
+    int h = (c * c) / (2 * g);
+
+    cout << h;
+
+    return 0;
+}
