@@ -1,0 +1,51 @@
+Write a program that processes a given string to determine:
+
+The first non-repeating character (if present).
+The most repeated character in the string.
+If multiple characters have the same highest frequency, print the first non-repeating character first, then the repeating character.
+If the input string is empty, print "Invalid Input."
+If all characters in the string are repeating, print "None" followed by the first repeating character.
+
+
+
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    string s;
+    getline(cin,s);
+
+    int n=s.size();
+    
+    if(s==""){
+        cout<<"Invalid Input"<<endl;           // After printing "Invalid Input", your program continues. Later it executes char maxi so we need to write return here.
+        return 0;
+    }
+    
+    unordered_map<char,int> mp;
+    for(int i=0;i<n;i++){
+        mp[s[i]]++;
+    }
+    bool found=false;
+    for(int i=0;i<n;i++){
+        if(mp[s[i]]==1){
+            cout<<s[i]<<endl;
+            found=true;
+            break;
+        }
+    }
+    if(!found){                              // if(found==false)
+        cout<<"None"<<endl;
+    }
+    
+    char maxi=s[0];
+    for(int i=0;i<n;i++){
+       if(mp[s[i]]>mp[maxi]){                 // Because you use > (not >=), if two characters have the same highest frequency, maxi remains the one that appeared first in the string.
+           maxi=s[i]; 
+       }
+    }
+    cout<<maxi<<endl;
+    
+    return 0;
+}
