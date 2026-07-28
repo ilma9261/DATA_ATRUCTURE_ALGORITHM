@@ -1,7 +1,9 @@
-In a city there are N houses. A buyer is looking for a plot of land in the city on which to build their house. They want to buy the largest plot of land that will allow them to 
-build the largest possible house. All the houses in the city lie on a straight line and all of them have a house number relative to the entry point of the city.
-The buyer wants to find the house numbers between which they can build the largest possible house. Write an algorithm to help the buyer find the house numbers between which they 
-can build their largest possible house.
+In a city there are N houses. A buyer is looking for a plot of land in the city on which to build their house. They want to buy the 
+largest plot of land that will allow them to build the largest possible house. All the houses in the city lie on a straight line and all
+of them have a house number relative to the entry point of the city.
+The buyer wants to find the house numbers between which they can build the largest possible house. Write an algorithm to help the buyer
+find the house numbers between which they can build their largest possible house.
+
 
 
  sort(houses.begin(),houses.end());
