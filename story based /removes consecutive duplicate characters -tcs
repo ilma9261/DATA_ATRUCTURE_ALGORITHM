@@ -1,0 +1,27 @@
+Write a program that reads a string input from the user and removes all consecutive duplicate characters while maintaining the original 
+order of distinct characters. The program should then output the modified string.
+
+Input - 223334566777
+
+Output - 234567
+
+
+
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+   string s;
+   getline(cin,s);
+   string ans="";              // can't initialise as string s=s[0]; cz it is char 
+   ans+=s[0];
+   for(int i=1;i<s.size();i++){
+       if(s[i]!=s[i-1]){
+           ans+=s[i];
+       }
+   }
+   cout<<ans<<endl;
+    return 0;
+}
