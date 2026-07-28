@@ -1,0 +1,46 @@
+You are given two integers, n1 and n2. Your task is to find the n1th and n2th prime numbers, compute their product, and then subtract 1 from the result.
+
+Input : 4 5
+
+Output : 76
+
+
+
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+bool isprime(int num){
+        if(num<2){
+            return false;
+        }
+        for(int i=2;i*i<=num;i++){
+            if(num%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+int main(){
+    int n1,n2;
+    cin>>n1>>n2;
+    int cnt=0;
+    int num=2;             // Since the first prime starts from 2
+    int prime1;
+    int prime2;
+    while(cnt<max(n1,n2)){
+        if(isprime(num)){               // if(true)
+            cnt++;
+            if(cnt==n1){
+                prime1=num;
+            }
+            if(cnt==n2){
+                prime2=num;
+            }
+        }
+        num++;
+    }
+
+    cout<<(prime1*prime2)-1<<endl;
+    return 0;
+}
