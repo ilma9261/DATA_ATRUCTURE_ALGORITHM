@@ -28,7 +28,7 @@ Count how many such valid pairs exist.
 #include <bits/stdc++.h>
 using namespace std;
 int main(){
-   int t;
+   int t;                         //  Sometimes you'll see-  Constraints: 1 ≤ T ≤ 10   This immediately tells you the problem has test cases.
    cin>>t;
    while(t--){
         int n,x,y;
