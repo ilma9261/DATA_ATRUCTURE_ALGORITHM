@@ -12,7 +12,7 @@ class Solution {
             mp[arr[i]]++;
             if(mp[arr[i]]==2){
                 v.push_back(arr[i]);
-                mp.erase(arr[i]);
+                mp.erase(arr[i]);                        // always pay attention if i need to erase
             }
         }
         return v;
