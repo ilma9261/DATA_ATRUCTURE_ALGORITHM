@@ -34,7 +34,7 @@ int main()
     }
     // Fix for character not found
     if (first == INT_MAX && last ==INT_MIN) {              // ALWAYS CHECK FOR HIDDEN TEST CASE(EDGE CASE) NO MATTER IF IT IS MENTIONED IN THE QUESTION OR NOT
-        cout << "{-1,-1}" << endl;
+        cout << "{-1,-1}" << endl;                         // -1 is universally used for "Not Found" scenarios
     } else {
         cout << '{' << first << ',' << last << '}' << endl;
     }
