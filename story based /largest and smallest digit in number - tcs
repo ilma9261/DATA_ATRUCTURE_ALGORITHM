@@ -1,0 +1,28 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    // Make n positive in case of negative input
+    n = abs(n);
+    int larg=INT_MIN;
+    int small=INT_MAX;
+    if(n==0){                        // edge case 
+        cout<<"[0,0]"<<endl;
+        return 0;
+    }
+    while(n!=0){
+        int digit=n%10;
+        if(digit > larg){
+            larg=digit;
+        }
+        if(digit<small){              // cannot use else if here 
+            small=digit;
+        }
+        n=n/10;
+    }
+    cout<<'['<<larg<<','<<small<<']';
+    return 0;
+}
