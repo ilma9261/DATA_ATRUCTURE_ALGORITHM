@@ -1,0 +1,25 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int mul(int a,int b){
+    int res=0;
+    for(int i=0;i<b;i++){
+        res+=a;
+    }
+    return res;
+}
+int fact(int n){
+       if(n==0 || n==1){
+           return 1;
+       }
+       else{
+          return mul(n,fact(n-1));
+       }
+   }
+int main()
+{
+   int n;
+   cin>>n;
+  cout<<fact(n);
+    return 0;
+}
