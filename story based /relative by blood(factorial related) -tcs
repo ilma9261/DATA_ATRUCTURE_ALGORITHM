@@ -1,0 +1,50 @@
+You are given a number, your task is to check the given number is 'Relative by blood' number or not.  
+
+NOTE: 'Relative by blood' Numbers are the numbers whose sum of factorial of digits is equal to the original number. Print 1 if the Number
+is 'Relative by blood', else Print 0.  
+
+Example 1:  
+
+Input:
+Example 1:
+Input:
+N = 145
+Output:
+1
+
+
+
+
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+ int fact(int n){
+        if(n==0){
+            return 1;
+        }
+        else{
+            return n*fact(n-1);
+        }
+    }
+    
+int main()
+{
+    int n;
+    cin>>n;
+    int num=n;
+    int sum=0;
+   while(n!=0){
+       int digit=n%10;
+       sum+=fact(digit);
+       n=n/10;
+   }
+   if(sum==num){
+       cout<<1<<endl;
+   }
+    else{
+        cout<<0<<endl;
+    }
+    return 0;
+}
