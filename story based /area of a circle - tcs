@@ -1,0 +1,32 @@
+Write a program to calculate the area of circle of when diameter is given.
+
+NOTE: PI = 3.1416
+
+Example 1:
+
+Input:
+d = 3
+Output: 7.0686
+
+Example 2:
+Input:
+d = 2.5
+Output: 4.90875
+
+
+
+
+
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    double d;
+    cin>>d;
+    double r=d/2;
+    double area=3.1416*r*r;
+    cout<<area<<endl;
+    return 0;
+}
