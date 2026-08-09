@@ -39,3 +39,48 @@ using namespace std;
         
         return 0;
     }
+
+
+
+
+
+
+In a small village, a scroll contains a list of numbers. Some of these numbers are zeros, which are seen as obstacles. Your task is to 
+move all the zeros to the end of the list without changing the order of the other numbers.You must do this in-place, without using extra
+space.
+
+
+
+
+
+// more optimal without using extra space 
+// two pointer technique
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    int arr[n];
+
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int j = 0;
+
+    for(int i = 0; i < n; i++) {
+        if(arr[i] != 0) {
+            swap(arr[i], arr[j]);
+            j++;
+        }
+    }
+
+    for(int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
