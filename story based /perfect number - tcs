@@ -1,0 +1,52 @@
+You are given an integer n. You need to check if the number is a perfect number or not. Return true if it is a perfect number, otherwise, 
+return false.   
+
+A perfect number is a number whose proper divisors add up to the number itself.   
+
+Examples:   
+
+Input: n = 6   
+
+Output: true   
+
+Explanation: Proper divisors of 6 are 1, 2, 3.   
+
+1 + 2 + 3 = 6.
+
+
+
+
+
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int sum=0;
+    
+    if(n <= 1){                            // Best habit: check the constraints. If they say something like n >= 2, then you don't need to handle 1 at all.
+
+                                               If they say n >= 1, then you should handle 1.
+        cout << "false";
+        return 0;
+    }
+
+    for(int i=1;i*i<=n;i++){
+        if(n%i==0){
+            sum+=i;
+            if(n/i!=i && n/i!=n){
+            sum+=n/i;
+        }
+        }
+    }
+    if(sum==n){
+        cout<<"true";
+    }
+    else{
+        cout<<"false";
+    }
+    return 0;
+}
