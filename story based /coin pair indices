@@ -1,0 +1,77 @@
+Question 1: Coin Pair Indices
+
+You are given an array of integers representing coin values and an integer target value. Find two different indices such that the sum of
+the coin values at those indices equals the target value. Return the indices of the two coins.
+
+Example:
+
+Input:
+
+coins = [2, 7, 11, 15]
+
+target = 9
+
+Output:
+
+[0, 1]
+
+
+
+
+
+
+  // brute force 
+
+  #include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int k;
+    cin>>k;
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            if((arr[i]+arr[j])==k){
+                cout<<"["<<i<<","<<j<<"]"<<endl;
+            }
+        }
+    }
+    return 0;
+}
+
+
+
+
+// optimal approach
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int k;
+    cin>>k;
+    unordered_map<int,int> mp;
+    
+    for(int i=0;i<n;i++){
+        int p=k-arr[i];
+        if(mp.find(p)!=mp.end()){
+            cout<<mp[p]<<" "<<i;        // Because mp[p] is the index of the previously seen number, while i is the index of the current number
+            return 0;                   // Otherwise, your loop continues and could potentially find another pair and print additional output
+        }
+        mp[arr[i]]=i;
+    }
+    
+    return 0;
+}
