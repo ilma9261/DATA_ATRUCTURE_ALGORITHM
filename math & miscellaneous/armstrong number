@@ -1,4 +1,31 @@
-//gfg
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int num=n;
+    int ans=0;
+    int k=to_string(num).size();
+    while(n!=0){
+        int digit=n%10;
+        ans+=pow(digit,k);
+        n=n/10;
+    }
+    if(num==ans){
+        cout<<"true";
+    }
+    else{
+        cout<<"false";
+    }
+    return 0;
+}
+
+
+
+
 //check if a three digit number is armstrong or not
 
 class Solution {
