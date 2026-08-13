@@ -1,0 +1,45 @@
+X is having a ballon and can hold the capacity of y kg. we need to find how many people can fly in the ballon so that more number of 
+people can fly . Each person has weight z kg and the balloon can max carry uptp y kg.
+
+Find the total number of members who can fly in the balloon
+
+Input :
+
+n-number of persons
+
+W[]-weights of those Persons
+
+Y-capacity of balloon
+
+
+
+
+
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int y;
+    cin>>y;
+    int n;
+    cin>>n;
+    vector<int> z(n);
+    for(int i=0;i<n;i++){
+        cin>>z[i];
+    }
+    int cnt=0;
+    sort(z.begin(),z.end());
+    for(int i=0;i<n;i++){
+     y=y-z[i];
+        if(y>=0){
+            cnt++;
+        }
+        else{
+            break;                       // exit when capacity is reached
+        }
+    }
+    cout<<cnt<<endl;
+    return 0;
+}
