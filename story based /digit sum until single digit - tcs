@@ -10,7 +10,42 @@ Output:9
 
 
 
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,r;
+    cin>>n>>r;
+    if(r==0){
+        cout<<0;
+        return 0;
+    }
+    int sum=0;
+    while(n!=0){
+        int digit=n%10;
+        sum+=digit;
+        n=n/10;
+    }
+    sum=sum*r;
+    while(sum>9){
+        int ans=0;
+         while(sum!=0){
+             int d=sum%10;
+        ans+=d;
+        sum=sum/10;
+        }
+        sum=ans;
+    }
+    cout<<sum<<endl;
+    
+    return 0;
+}
 
+
+
+
+// BRUTE FORCE
 
 #include <iostream>
 #include <bits/stdc++.h>
