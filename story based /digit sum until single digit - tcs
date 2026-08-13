@@ -28,16 +28,11 @@ int main()
         n=n/10;
     }
     sum=sum*r;
-    while(sum>9){
-        int ans=0;
-         while(sum!=0){
-             int d=sum%10;
-        ans+=d;
-        sum=sum/10;
-        }
-        sum=ans;
-    }
-    cout<<sum<<endl;
+    
+    //digital root formula
+    
+    int result= (int)(1+(sum-1)%9);
+    cout<<result<<endl;
     
     return 0;
 }
