@@ -1,0 +1,45 @@
+An intelligence agency has received reports about some threats. The reports consist of numbers in a mysterious method. There is a number 
+“N” and another number “R”. Those numbers are studied thoroughly and it is concluded that all digits of the number ‘N’ are summed up and 
+this action is performed ‘R’ number of times. The resultant is also a single digit that is yet to be deciphered. The task here is to find
+the single-digit sum of the given number ‘N’ by repeating the action ‘R’ number of times.If the value of $R = 0$, print $0$.Inputs & Sample 
+Test CaseInput:N = 99 R = 3
+Explanation / Calculation:Sum of digits of N: $9 + 9 = 18$Repeat $R$ times: $18 \times 3 = 54$Single-digit reduction of 54: 5 + 4 = 9
+Output:9
+
+
+
+
+
+
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,r;
+    cin>>n>>r;
+    if(r==0){
+        cout<<0;
+        return 0;
+    }
+    int sum=0;
+    while(n!=0){
+        int digit=n%10;
+        sum+=digit;
+        n=n/10;
+    }
+    sum=sum*r;
+    while(sum>9){
+        int ans=0;
+         while(sum!=0){
+             int d=sum%10;
+        ans+=d;
+        sum=sum/10;
+        }
+        sum=ans;
+    }
+    cout<<sum<<endl;
+    
+    return 0;
+}
