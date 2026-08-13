@@ -1,0 +1,33 @@
+Parking charges We need to find the cost for parking. The fees for first 2 hours will be 100rs per hour and for the next 3 hours it will 
+be 50rs per hour and beyond 5 hours it will be 20rs per hour we need to find the total charge for the parking
+
+Input : no. of hours
+
+Output : amount
+
+
+
+
+
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int time;
+    cin>>time;
+    int cost=0;
+    if(time<=2){                                // use else if and else otherwise it will execute all the conditions independently and produce output for example for 1 input it should be 100 but it will give 150 . 
+        cost = time*100;
+    }
+    else if(time<=5){
+        cost=(2*100) + (time-2)*50;
+    }
+    else{
+        cost=(2*100)+(3*50)+(time-5)*20;
+    }
+    cout<<cost<<endl;
+
+    return 0;
+}
