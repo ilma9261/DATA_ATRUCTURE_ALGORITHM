@@ -1,0 +1,19 @@
+Given a string $S$, determine if it contains both the characters '&' and '#' and the length of the string is even. If both conditions are 
+satisfied, print "YES"; otherwise, print "NO".Input Format: Single line input stringOutput Format: "YES" or "NO"Sample Input: abc&def#Sample
+Output: YES
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s;
+    getline(cin,s);
+    if(s.find("&")!=string::npos && s.find("#")!=string::npos && s.size()%2==0){
+        cout<<"YES";
+    }
+    else{
+        cout<<"NO";
+    }
+    return 0;
+}
