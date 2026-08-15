@@ -1,0 +1,6 @@
+Given a sorted array of integers of size n and a target value x, find the first occurrence of $x$ and the last occurrence of x,
+then return the difference between the last and first occurrence. If the target element is not present in the array, print -1.
+
+
+
+
