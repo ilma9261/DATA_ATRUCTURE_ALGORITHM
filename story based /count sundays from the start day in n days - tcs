@@ -31,11 +31,10 @@ string s;
     unordered_map<string,int> mp={{"mon",0},{"tue",1},{"wed",2},{"thu",3},{"fri",4},{"sat",5},{"sun",6}};
     int ans=0;
    n=n- (mp["sun"]-mp[s]);
-   if(n>=0){
-       ans++;
-   }
-  if(n>0){             // it should not be n!=0 otherwise it would give wrong output by considering negative numbers
-   ans+=n/7; 
+  
+  if(n>0){            // it should not be n!=0 otherwise it would give wrong output by considering negative numbers
+   ans++;
+   ans+=(n-1)/7; 
    }
     cout<<ans;
     return 0;
