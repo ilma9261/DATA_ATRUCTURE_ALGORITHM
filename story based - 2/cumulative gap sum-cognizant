@@ -1,0 +1,24 @@
+You are given a string $S$, consisting only of lowercase English letters. Each letter has a numeric value where:$a = 1, b = 2, \dots, 
+z = 26$.Your task is to compute the cumulative alphabetic gap sum of the string with the following rules:Consider each adjacent pair of
+characters in $S \rightarrow (S[i], S[i+1])$.Compute the gap between them as:$$\text{gap} = \text{value}(S[i+1]) - \text{value}(S[i])$$Add 
+each computed gap to a cumulative sum.Do not consider the pair $(\text{last character}, \text{first character})$ (i.e., not circular).
+Return the final cumulative sum.Input FormatA single string $S$ ($1 \le \vert{}S\vert{} \le 10^5$).
+
+
+
+  
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+   string s;
+   cin>>s;    
+   int sum=0;
+   for(int i=1;i<s.size();i++){
+       int gap=(s[i]-'a'+1)-(s[i-1]-'a'+1);
+       sum+=gap;
+   }
+   cout<<sum<<endl;
+    return 0;
+}
