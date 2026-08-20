@@ -1,0 +1,58 @@
+Two integers N and S are given.
+
+Starting from S, find prime numbers and count them until the Nth prime is reached.
+
+Once the Nth prime is found:
+
+Take that prime.
+
+Take the next two consecutive prime numbers.
+
+Return the sum of all three primes.
+
+
+
+
+
+#include <stdio.h>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n,s;
+    cin>>n>>s;
+       int cnt=0;
+       int num=2;
+       int first,second,third;
+      
+      while(cnt<=n+2){
+          bool isprime=true;
+          if(s < 2){
+            isprime = false;         // For s = 1, the loop never executes, so it considers 1 as prime.
+          }
+          for(int i=2;i*i<=s;i++){
+              if(s%i==0){
+                  isprime=false;
+                  break;
+              }
+          }
+           if(isprime==true){
+                  cnt++;
+                  if(cnt==n){
+                     first=s;
+                  }
+                  if(cnt==n+1){
+                      second=s;
+                  }
+                  if(cnt==n+2){
+                      third=s;
+                      cout<<first+second+third;
+                      return 0;
+                  }
+              }
+          s++;
+      }
+
+    return 0;
+}
