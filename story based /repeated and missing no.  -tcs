@@ -1,0 +1,48 @@
+An array of size N contains numbers from 0 to N-1. Exactly one number is repeated and exactly one number is missing.
+
+Find and print:
+
+The duplicate number
+
+The missing number
+
+Input Format
+
+First line contains integer N
+
+Second line contains N space-separated integers
+
+
+
+
+#include <stdio.h>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   int n;
+   cin>>n;
+   vector<int> v(n);
+   for(int i=0;i<n;i++){
+       cin>>v[i];
+   }
+   unordered_map<int,int> mp;
+   int sum=0;
+   for(int i=0;i<v.size();i++){
+       sum+=v[i];
+       mp[v[i]]++;
+       if(mp[v[i]]==2){
+           cout<<v[i]<<endl;
+            sum-=v[i];
+       }
+   }
+   int totalsum=0;
+   for(int i=0;i<n;i++){
+       totalsum+=i;
+   }
+   int missing=totalsum-sum;
+   cout<<missing<<endl;
+
+    return 0;
+}
