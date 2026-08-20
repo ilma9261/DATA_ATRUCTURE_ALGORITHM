@@ -1,0 +1,41 @@
+A group of explorers discovers several treasure chests inside an ancient cave. Each chest contains a certain number of gold coins.
+
+The chief explorer has a magical lock that can only be opened if the total coins in exactly two chests equals a target value K.
+
+Your task is to find the indices of the two chests whose coin values add up to K.
+
+It is guaranteed that exactly one valid pair exists.
+
+You may not use the same chest twice.
+
+
+
+
+#include <stdio.h>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   int n;
+   cin>>n;
+   int arr[n];
+   for(int i=0;i<n;i++){
+       cin>>arr[i];
+   }
+   int k;
+   cin>>k;
+   
+   unordered_map<int,int> mp;
+   for(int i=0;i<n;i++){
+       int p=k-arr[i];
+       if(mp.find(p)!=mp.end()){
+           cout<<mp[p]<<" "<<i;
+           return 0;
+       }
+       mp[arr[i]]=i;
+   }
+   return 0;
+}
+
+// if first pair is required then nested loop approach is safest 
