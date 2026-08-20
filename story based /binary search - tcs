@@ -1,0 +1,72 @@
+Given a sorted array and a key, perform Binary Search.
+
+If the key is found, print the key.
+
+Otherwise, print the element whose value is closest (minimum absolute difference) to the key.
+
+If two elements are equally close, print the smaller element.
+
+Input Format
+
+First line contains an integer N.
+
+Second line contains N space-separated integers.
+
+
+
+
+#include <stdio.h>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   int n;
+   cin>>n;
+   int arr[n];
+   for(int i=0;i<n;i++){
+       cin>>arr[i];
+   }
+   int key;
+   cin>>key;
+   int low=0;
+   int high=n-1;
+   
+   while(low<=high){
+       int mid=(low+high)/2;
+      
+       if(arr[mid]==key){
+           cout<<key;
+           return 0;
+       }
+       else if(arr[mid]>key){
+           high=mid-1;
+       }
+       else{
+           low=mid+1;
+       }
+       
+   }
+   // key is smaller than the smallest element
+    if(high < 0){
+        cout << arr[low];
+    }
+    // key is larger than the largest element
+    else if(low >= n){
+        cout << arr[high];
+    }
+    
+  else{
+        int left = abs(arr[high] - key);
+        int right = abs(arr[low] - key);
+
+        if(left <= right){
+            cout << arr[high];
+        }
+        else{
+            cout << arr[low];
+        }
+    }
+
+   return 0;
+}
