@@ -1,5 +1,8 @@
 // leetcode 136
 
+
+// "XOR has the property that x ^ x = 0 and x ^ 0 = x, so two identical elements cancel each other."
+
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
