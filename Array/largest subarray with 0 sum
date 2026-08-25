@@ -1,0 +1,26 @@
+// gfg
+
+class Solution {
+  public:
+    int maxLength(vector<int>& arr) {
+        // code here
+        int n=arr.size();
+        unordered_map<int,int> mp;
+        int sum=0;
+        int longest=0;
+        for(int i=0;i<n;i++){
+            sum+=arr[i];
+            if(sum==0){
+                longest=i+1;
+            }
+            else if(mp.find(sum)==mp.end()){
+                mp[sum]=i;
+            }
+            else{
+                int current=i-mp[sum];
+                longest=max(current,longest);
+            }
+        }
+        return longest;
+    }
+};
