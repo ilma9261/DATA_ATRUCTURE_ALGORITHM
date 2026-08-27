@@ -1,0 +1,47 @@
+// gfg
+
+// 1
+
+#include <iostream>
+using namespace std;
+void nameNtimes(int n){          // We made the function void because the function's job is only to print "gfg" n times, not to return a value.
+    if(n==0){
+        return ;
+    }
+    else{
+        cout<<"GFG"<<' ';      
+        nameNtimes(n-1);
+    }
+}
+int main() {
+    int n;
+    cin >> n;
+
+    // code here
+    nameNtimes(n);
+
+    return 0;
+}
+
+
+// 2
+
+#include <iostream>
+using namespace std;
+string nameNtimes(int n){         
+    if(n==0){
+        return "";
+    }
+    else{
+        return "GFG " +nameNtimes(n-1);                  // string + charcter doesnot work like "gfg"+' '
+    }
+}
+int main() {
+    int n;
+    cin >> n;
+
+    // code here
+   cout<< nameNtimes(n);
+
+    return 0;
+}
