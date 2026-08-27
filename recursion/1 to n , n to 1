@@ -1,5 +1,7 @@
 // gfg
 
+// print 1 to n
+
 class Solution {
   public:
     void printTillN(int n) {
@@ -10,6 +12,23 @@ class Solution {
         else{                                // we dont need to use else statement cz code does not work after return 
             printTillN(n-1);
             cout<<n<<" ";                    // printing spaces after every number 
+        }
+    }
+};
+
+
+// print n to 1
+
+class Solution {
+  public:
+    void printNos(int n) {
+        // code here
+        if(n==0){
+            return;
+        }
+        else{
+            cout<<n<<" ";
+            printNos(n-1);
         }
     }
 };
