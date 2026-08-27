@@ -1,0 +1,17 @@
+// leetcode 686
+
+class Solution {
+public:
+    int repeatedStringMatch(string a, string b) {
+        string repeat="";
+        int cnt=0;
+        while(repeat.size()<a.size()+b.size()){
+            repeat+=a;
+            cnt++;
+            if(repeat.find(b)!=string::npos){
+                return cnt;
+            }
+        }
+        return -1;
+    }
+};
