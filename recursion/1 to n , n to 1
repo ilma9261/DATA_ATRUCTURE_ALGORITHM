@@ -1,5 +1,9 @@
 // gfg
 
+Print BEFORE recursion  → N to 1
+Print AFTER recursion   → 1 to N
+
+
 // print 1 to n
 
 class Solution {
