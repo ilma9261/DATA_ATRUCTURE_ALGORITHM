@@ -1,0 +1,32 @@
+// leetcode 5
+
+class Solution {
+public:
+    string longestPalindrome(string s) {
+        int n=s.size();
+        string ans="";
+        for(int i=0;i<n;i++){
+            // Odd length palindrome  
+            int prev=i;
+            int next=i;
+            while(prev>=0 && next<n && s[prev]==s[next]){
+                 if(next-prev+1>ans.size()){
+                    ans=s.substr(prev,next-prev+1);
+                }
+                prev--;
+                next++;
+            }
+             // Even length palindrome
+            prev=i;
+            next=i+1;
+             while(prev>=0 && next<n && s[prev]==s[next]){
+                if(next-prev+1>ans.size()){
+                    ans=s.substr(prev,next-prev+1);
+                }
+                prev--;
+                next++;
+            }
+        }
+        return ans;
+    }
+};
