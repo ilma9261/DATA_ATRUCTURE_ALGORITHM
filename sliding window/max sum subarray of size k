@@ -1,6 +1,32 @@
 //gfg
 //max sum subarray of size k
 
+
+class Solution {
+  public:
+    int maxSubarraySum(vector<int>& arr, int k) {
+        // code here
+        int maxi=0;
+        int sum=0;
+        int n=arr.size();
+        for(int j=0;j<k;j++){
+            sum+=arr[j];
+        }
+        maxi=max(maxi,sum);
+        int i=0;
+        int j=k;
+        while(j<n){                   // When j == n, arr[j] means arr[n], which is outside the array. because array is n-1 for 0 based indexing
+            sum=sum-arr[i]+arr[j];
+            i++;
+            j++;
+            maxi=max(sum,maxi);
+            
+        }
+        return maxi;
+    }
+};
+
+
 class Solution{
   public:
     long maxSubarraySum(vector<int>& Arr, int K){
