@@ -1,0 +1,30 @@
+// leetcode 219
+
+class Solution {
+public:
+    bool containsNearbyDuplicate(vector<int>& nums, int k) {
+        int n=nums.size();
+        unordered_map<int,int> mp;
+        for(int i=0;i<k && i<n;i++){
+            if(mp.find(nums[i])!=mp.end()){
+                return true;
+            }
+            else{
+                mp[nums[i]]++;
+            }
+        }
+        int i=0;
+        int j=k;
+        while(j<n){
+
+// The key is: remove after checking, not before checking. Because the condition is: |i - j| <= k So an element exactly k indices away is still valid.
+            if(mp.find(nums[j])!=mp.end()){ 
+                mp[nums[j]]++;
+            }
+             mp.erase(nums[i]);
+             i++;
+             j++;
+        }
+        return false;
+    }
+};
