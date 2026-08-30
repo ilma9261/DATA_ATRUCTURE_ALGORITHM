@@ -1,5 +1,10 @@
 // leetcode 219
 
+// st.count(nums[j])   // Does it already exist?
+// st.insert(nums[j])  // Add it
+// st.erase(nums[i])   // Remove it
+
+
 class Solution {
 public:
     bool containsNearbyDuplicate(vector<int>& nums, int k) {
