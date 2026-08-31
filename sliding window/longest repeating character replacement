@@ -1,0 +1,33 @@
+// leetcode 424
+
+class Solution {
+public:
+    int characterReplacement(string s, int k) {
+        int n=s.size();
+        unordered_map<char,int> mp;
+        int i=0;
+        int j=0;
+         int maxFreq = 0;
+         int maxi=0;
+        while(j<n) {
+            mp[s[j]]++;
+            maxFreq=max(maxFreq,mp[s[j]]);
+            int len=j-i+1;
+            int r=len - maxFreq;
+            while(r > k) {
+                mp[s[i]]--;
+                if(mp[s[i]]==0){
+                    mp.erase(s[i]);
+                }
+                i++;
+                len=j-i+1;
+                r=len - maxFreq;
+            }
+            maxi=max(maxi,len);
+            j++;
+        }
+
+        return maxi;
+
+    }
+};
