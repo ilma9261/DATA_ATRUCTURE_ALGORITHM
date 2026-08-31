@@ -1,0 +1,29 @@
+// leetcode 1838
+
+class Solution {
+public:
+    int maxFrequency(vector<int>& nums, int k) {
+        int n=nums.size();
+        int maxi=0;
+                                                      // But int can only store approximately:
+                                                     // 2.1 × 10⁹ so we need long long    
+        long long sum=0;
+        int i=0;
+        int j=0;
+        sort(nums.begin(),nums.end());
+        while(j<n){
+            sum+=nums[j];
+            long long total=(long long)nums[j]*(j-i+1);
+            long r=total-sum;
+            while(r>k){
+            sum=sum-nums[i];
+               i++;
+             total=(long long)nums[j]*(j-i+1);
+             r=total-sum;
+            }
+             maxi=max(maxi,j-i+1);
+             j++;
+        }
+        return maxi;
+    }
+};
