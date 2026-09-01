@@ -1,0 +1,76 @@
+// leetcode 
+
+// TWO APPROCHES BUT FIRST ONE IS SPACE OPTIMIZED
+
+// 1
+
+class Solution {
+public:
+    int countDays(int days, vector<vector<int>>& meetings) {
+        sort(meetings.begin(),meetings.end());
+        vector<vector<int>> res;
+        int n=meetings.size();
+        int cnt=0;
+        int start1=meetings[0][0];
+        int end1=meetings[0][1];
+        for(int i=1;i<n;i++){
+           int start2=meetings[i][0];
+           int end2=meetings[i][1];
+           if(end1>=start2){
+            start1=start1;
+            end1=max(end1,end2);
+           }
+         else{
+             // Previous merged interval is complete
+            cnt+= end1 - start1 + 1;
+           start1=start2;
+           end1=end2;
+         }
+        }
+         // Add the last merged interval
+        cnt += end1 - start1 + 1;
+
+        int available=days-cnt;
+        return available;
+    }
+};
+
+
+// 2
+
+class Solution {
+public:
+    int countDays(int days, vector<vector<int>>& meetings) {
+        sort(meetings.begin(),meetings.end());
+        vector<vector<int>> res;
+        int n=meetings.size();
+        int start1=meetings[0][0];
+        int end1=meetings[0][1];
+        for(int i=1;i<n;i++){
+           int start2=meetings[i][0];
+           int end2=meetings[i][1];
+           if(end1>=start2){
+            start1=start1;
+            end1=max(end1,end2);
+           }
+         else{
+            res.push_back({start1,end1});
+           start1=start2;
+           end1=end2;
+         }
+        }
+       
+        res.push_back({start1,end1});
+        int cnt=0;
+
+        // for (auto it : res) {
+        //    cnt += it[1] - it[0] + 1;
+         // }
+
+        for(int i=0;i<res.size();i++){
+            cnt+=res[i][1]-res[i][0]+1;
+        }
+        int available=days-cnt;
+        return available;
+    }
+};
