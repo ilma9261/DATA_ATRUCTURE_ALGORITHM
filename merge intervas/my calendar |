@@ -1,0 +1,46 @@
+// leetcode 729
+
+class MyCalendar {
+public:
+    MyCalendar() {
+        
+    }
+    map<int,int> mp;
+    bool book(int startTime, int endTime) {
+
+        // Find the next interval
+        // lower_bound gives an iterator not int
+        auto it = mp.lower_bound(startTime);             // mp is sorted by its keys (start times).
+
+          //lower_bound(x) finds the first key that is >= x.
+          // Check overlap with next interval
+
+        if(it!=mp.end()){                           // find() needs a key, but it is already an iterator
+
+      //   it->first        key = start time
+       //  it->second      value = end time
+
+            int  s1=it->first; 
+            int e1=it->second;
+            int s2=startTime;
+            int e2=endTime;
+            if(s2<e1 && s1<e2){
+                return false;
+            }
+        }
+        // Check overlap with previous interval
+        if(it!=mp.begin()){ 
+            it--;                    // It moves the iterator one element backward.
+            int s1=startTime;
+            int e1=endTime;
+            int s2=it->first;
+            int e2=it->second;
+             if(s2<e1 && s1<e2){
+                return false;
+            }
+        }
+        mp[startTime]=endTime;
+        return true;
+    }
+};
+
