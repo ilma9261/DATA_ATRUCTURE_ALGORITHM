@@ -10,7 +10,7 @@ public:
             if(isBadVersion(mid)){
                 high=mid;
             }
-            else{
+            else{                       // using else instead of (!isBadVersion(mid)) bcz APT might have limited calls allowed
               low=mid+1;
             }
         }
